@@ -39,10 +39,10 @@ export const PublishEdit = () => {
 
   const handleSubmit = async () => {
     try {
-      let response;
+      
       if (id) {
         // Update existing blog post
-        response = await axios.put(
+        await axios.put(
           `${BACKEND_URL}/api/v1/blog/update/${id}`,
           {
             title,
@@ -56,7 +56,7 @@ export const PublishEdit = () => {
         );
       } else {
         // Create new blog post
-        response = await axios.post(
+        await axios.post(
           `${BACKEND_URL}/api/v1/blog`,
           {
             title,
